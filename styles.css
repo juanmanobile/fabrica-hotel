@@ -1,0 +1,86 @@
+/* ===== Fábrica Hotel — estilos globales ===== */
+
+:root {
+  --bg: #FBF9F6;
+  --ink: #1A1613;
+  --accent: #E8601A;
+  --accent-hover: #F07030;
+  --accent-rgb: 232, 96, 26;
+  /* derivados (se recalculan por JS al cambiar la paleta) */
+  --accent-tint: rgba(232, 96, 26, 0.10);
+  --accent-tint-soft: rgba(232, 96, 26, 0.06);
+  --accent-bd: rgba(232, 96, 26, 0.40);
+  --accent-bd-soft: rgba(232, 96, 26, 0.15);
+  --accent-glow: rgba(232, 96, 26, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: rgba(var(--accent-rgb), 0.30);
+  color: #fff;
+}
+
+/* serif helper (Playfair) */
+.font-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+/* Liquid glass card (light theme) */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(20, 17, 13, 0.08);
+  box-shadow: 0 1px 3px rgba(20, 17, 13, 0.04), 0 8px 24px rgba(20, 17, 13, 0.04);
+}
+
+/* Hide scrollbar */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ===== Marquees ===== */
+@keyframes fh-slide-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fh-slide-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+.marquee-l { animation: fh-slide-left 80s linear infinite; }
+.marquee-r { animation: fh-slide-right 80s linear infinite; }
+.marquee-pause:hover .marquee-l,
+.marquee-pause:hover .marquee-r { animation-play-state: paused; }
+
+/* ===== Scroll line indicator ===== */
+@keyframes scroll-line-pulse {
+  0%   { transform: scaleY(0.2); transform-origin: top; opacity: 0.2; }
+  50%  { transform: scaleY(1);   transform-origin: top; opacity: 0.8; }
+  100% { transform: scaleY(0.2); transform-origin: bottom; opacity: 0.2; }
+}
+.scroll-line-anim { animation: scroll-line-pulse 2.4s ease-in-out infinite; }
+
+/* dropcap for Story */
+.dropcap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  float: left;
+  padding: 6px 14px 0 0;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* tweak panel scrollbar tidy */
+.fh-cursor-grab { cursor: grab; }
+.fh-cursor-grabbing { cursor: grabbing; }
+
+/* fade-in utility used by motion shim fallback */
+[data-fh-reveal] { will-change: opacity, transform; }
