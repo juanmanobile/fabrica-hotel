@@ -132,7 +132,7 @@ const HOTEL = {
   facebook: 'https://facebook.com/fabricahotel',
   address1: 'Juan B. Alberdi 1979',
   address2: 'Armstrong (S2508), Santa Fe · Argentina',
-  mapsUrl: 'https://www.google.com/maps/place/F%C3%81BRICA+Hotel/@-32.7737113,-61.6105957,17z/data=!3m1!4b1!4m9!3m8!1s0x95c9e9600d64eb29:0x5a397d9c93c4c785!5m2!4m1!1i2!8m2!3d-32.7737114!4d-61.6057301',
+  mapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=-32.7737114,-61.6057301',
   mapsEmbed: 'https://maps.google.com/maps?q=-32.7737114,-61.6057301&z=16&output=embed',
 };
 
