@@ -12,7 +12,7 @@ const ROOMS = [
     pos: '50% 60%',
   },
   {
-    name: 'Doble Single',
+    name: 'Doble Twin',
     spec: 'Dos camas separadas',
     meta: '2 personas',
     desc: 'Ideal para colegas en viaje de trabajo o amigos en tránsito. Dos camas individuales independientes con todo el confort de una doble.',
@@ -150,3 +150,4 @@ Object.assign(window, {
   REVIEWS_TOP, REVIEWS_BOTTOM, STOPS, POINTS,
   HOTEL, PALETTES,
 });
+
