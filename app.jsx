@@ -32,12 +32,10 @@ function applyPalette(name) {
 function App() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
-  // animation profile must be set before children render
   window.__fhAnim = ANIM_PROFILES[t.anim] || ANIM_PROFILES['Elegante'];
 
   useEffectApp(() => { applyPalette(t.palette); }, [t.palette]);
 
-  // "Nosotros" / Historia link → land where the wheel text is already revealed
   useEffectApp(() => {
     const onClick = (e) => {
       const a = e.target.closest('a[href="#historia"]');
@@ -79,7 +77,7 @@ function App() {
       <Footer />
 
       <a
-        href={`https://wa.me/${HOTEL.whatsapp}`}
+        href={`https://wa.me/${HOTEL.whatsapp}?text=${encodeURIComponent('Hola, quisiera consultar disponibilidad en Fábrica Hotel. ¡Gracias!')}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"
