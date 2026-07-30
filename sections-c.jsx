@@ -109,7 +109,7 @@ function Location() {
 }
 
 /* ===================== CTA WHATSAPP ===================== */
-const CTA_ROOMS = ['Consulta general', 'Single', 'Doble Single', 'Doble Matrimonial', 'Triple', 'Familiar', 'Suite'];
+const CTA_ROOMS = ['Consulta general', 'Single', 'Doble Twin', 'Doble Matrimonial', 'Triple', 'Familiar', 'Suite'];
 
 function buildMessage(room) {
   if (room === 'Consulta general') return 'Hola, quisiera consultar disponibilidad en Fábrica Hotel. ¡Gracias!';
@@ -222,6 +222,9 @@ function Footer() {
           <div className="text-[10px] tracking-[0.3em] uppercase text-black/35 mb-5">Contacto</div>
           <div className="text-[13px] text-black/85 font-medium mb-1">WhatsApp</div>
           <a href={`https://wa.me/${HOTEL.whatsapp}`} target="_blank" rel="noopener noreferrer" className="block text-[13px] text-black/60 hover:text-[var(--accent)] mb-3 transition-colors">{HOTEL.whatsappDisplay}</a>
+          <div className="text-[13px] text-black/85 font-medium mb-1">Teléfono fijo</div>
+          <a href="tel:+543471462999" className="block text-[13px] text-black/60 hover:text-[var(--accent)] transition-colors">03471 462999</a>
+          <a href="tel:+543471463329" className="block text-[13px] text-black/60 hover:text-[var(--accent)] mb-3 transition-colors">03471 463329</a>
           <div className="text-[13px] text-black/85 font-medium mb-1">Email</div>
           <a href={`mailto:${HOTEL.email}`} className="block text-[13px] text-black/60 hover:text-[var(--accent)] transition-colors">{HOTEL.email}</a>
         </div>
